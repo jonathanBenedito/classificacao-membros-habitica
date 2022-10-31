@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@700&display=swap");
+.post-destaque {
+  width: 511px;
+}
+
+.post-destaque .header-missao {
+  background-color: #432874;
+  width: 100%;
+  padding: 15px 35px 15px 35px;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+.post-destaque .vitoria {
+  background-color: #FF9D0B;
+  padding: 21px 0 21px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #ffffff;
+}
+
+.post-destaque .vitoria .trofeu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.post-destaque .vitoria .trofeu text {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  margin-top: 12px;
+}
+
+.post-destaque .conteudo {
+  padding: 32px 27px 32px 27px;
+}
+
+.post-destaque .conteudo h1, .post-destaque .conteudo h2 {
+  color: #4E4A57;
+  font-weight: 500;
+}
+
+.post-destaque .conteudo h1 {
+  font-size: 24px;
+}
+
+.post-destaque .conteudo h2 {
+  font-size: 16px;
+}
+
+.post-destaque .conteudo .duracao img {
+  margin-top: 11px;
+  margin-bottom: 16px;
+}
+
+.post-destaque .conteudo .destaques {
+  margin-top: 28px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.post-destaque .conteudo .destaques .coluna {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.post-destaque .conteudo .destaques .coluna .avatar {
+  width: 75px;
+  height: 75px;
+  background-color: red;
+}
+
+.post-destaque .conteudo .destaques .coluna img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 10px;
+}
+
+.post-destaque .conteudo .destaques .coluna .quantia, .post-destaque .conteudo .destaques .coluna .categoria {
+  color: #432874;
+}
+
+.post-destaque .conteudo .destaques .coluna .quantia {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.post-destaque .conteudo .destaques .coluna .categoria {
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 11px;
+}
+
+.post-destaque .conteudo .destaques .coluna .nome {
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  color: #4E4A57;
+}
+/*# sourceMappingURL=home.style.css.map */

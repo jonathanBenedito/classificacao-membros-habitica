@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@700&display=swap');
+
+$primary-color: #432874;
+$vitoria-bg-color: #FF9D0B;
+$font-color: #4E4A57;
+$header-font: 'Roboto', sans-serif;
+$header-color: #ffffff;
+$text-font: 'Roboto Condensed', sans-serif;
+
+.post-destaque {
+  width: 511px;
+
+  .header-missao {
+    background-color: $primary-color;
+    width: 100%;
+    padding: 15px 35px 15px 35px;
+    color: $header-color;
+    font-family: $header-font;
+    font-size: 16px;
+  }
+
+  .vitoria {
+    background-color: $vitoria-bg-color;
+    padding: 21px 0 21px 0;
+    display: flex;
+    justify-content: center;
+    color: $header-color;
+
+    .trofeu {
+      display: flex;
+      flex-direction: column;
+
+      text {
+        font-family: $header-font;
+        font-size: 18px;
+        margin-top: 12px;
+      }
+    }
+  }
+
+  .conteudo {
+    padding: 32px 27px 32px 27px;
+
+    h1, h2 {
+      color: $font-color;
+      font-weight: 500;
+    }
+    
+    h1 {
+      font-size: 24px;
+    }
+
+    h2 {
+      font-size: 16px;
+    }
+
+    .duracao {
+      img {
+        margin-top: 11px;
+        margin-bottom: 16px;
+      }
+    }
+
+    .destaques {
+      margin-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      font-family: $text-font;
+
+      .coluna {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .avatar {
+          width: 75px;
+          height: 75px;
+          background-color: red;
+        }
+
+        img {
+          width: 48px;
+          height: 48px;
+          margin-bottom: 10px;
+        }
+        
+        .quantia, .categoria {
+          color: $primary-color;
+        }
+
+        .quantia {
+          font-size: 24px;
+          font-weight: 700;
+        }
+
+        .categoria {
+          font-size: 12px;
+          text-transform: uppercase;
+          font-weight: 700;
+          margin-bottom: 11px;
+        }
+
+        .nome {
+          font-size: 14px;
+          font-weight: 700;
+          text-align: center;
+          color: $font-color;
+        }
+      }
+    }
+  }
+}
