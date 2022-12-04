@@ -79,6 +79,7 @@ const ClassificacaoAutomatica = (props) => {
     let lista = []
 
     for (let i = 0; i < membros.length; i++) {
+      console.log(membros[i])
       const formatoCura = new RegExp(`${membros[i]} lançou Bênção`, 'g')
       const curasAchadas = logChat.match(formatoCura)
       const qtdCura = curasAchadas != null ? curasAchadas.length : 0
@@ -134,7 +135,7 @@ const ClassificacaoAutomatica = (props) => {
       }
 
       listaBuffs.map((buff) => {
-        const formatoBuff = new RegExp(`${membros[i]} lançou ${buff}`, 'g')
+        const formatoBuff = new RegExp(`${membros[i]}+ lançou ${buff}`, 'g')
         const buffsAchados = logChat.match(formatoBuff)
         qtdBuff = buffsAchados != null ? (qtdBuff + buffsAchados.length) : qtdBuff
       })
@@ -161,7 +162,6 @@ const ClassificacaoAutomatica = (props) => {
         onChange={handleInputChange}
         onInput={handleInputChange}
         value={values.membros}
-        readOnly
         style={{backgroundColor: '#f2f2f2'}}
       />
       <br />

@@ -33,21 +33,22 @@ const ClassificacaoManual = (props) => {
     for (let key in listaMembros) {
       nomeMembros.push(listaMembros[key].profile.name)
     }
-    setValues({...values, membros: nomeMembros})
+    setValues({ ...values, membros: nomeMembros })
   }
 
   const atualizarLista = (e) => {
     e.preventDefault()
     const formatoMembro = /[^;]+\s*/g;
+    const formularioMembros = values.membros
     const formularioParticipantes = values.participantes
     const logChat = values.logChat
     const nomeChefe = values.nomeChefe
-    const membros = values.membros
+    const membros = formularioMembros.match(formatoMembro)
     const participantes = formularioParticipantes.match(formatoMembro)
     const nomeItems = values.nomeItem
     let lista = []
-  
-    for(let i = 0; i < membros.length; i++){
+
+    for (let i = 0; i < membros.length; i++) {
       const formatoCura = new RegExp(`${membros[i]} lançou Bênção`, 'g')
       const curasAchadas = logChat.match(formatoCura)
       const qtdCura = curasAchadas != null ? curasAchadas.length : 0
@@ -56,17 +57,17 @@ const ClassificacaoManual = (props) => {
       const formatoDano = new RegExp(`${membros[i]} ataca ${nomeChefe}, causando ${decimal.source} de dano`, 'g')
       const linhaDano = logChat.match(formatoDano)
       let danosCausados = []
-      let totalDano =+ 0
+      let totalDano = + 0
 
       if (values.tipoMissao === 'chefe') {
-        if(linhaDano != null) {
+        if (linhaDano != null) {
           linhaDano.map(linha => {
-            var ret = linha.replace(`${membros[i]}`,'');
+            var ret = linha.replace(`${membros[i]}`, '');
             danosCausados.push(ret.match(decimal))
           })
         }
-  
-        if(danosCausados.length > 0){
+
+        if (danosCausados.length > 0) {
           danosCausados.map(dano => {
             totalDano += Number(dano[0])
           })
@@ -85,19 +86,19 @@ const ClassificacaoManual = (props) => {
         const linhaColeta = logChat.match(formatoColeta)
         console.log(linhaColeta)
 
-        if(linhaColeta != null) {
+        if (linhaColeta != null) {
           linhaColeta.map(linha => {
-            var ret = linha.replace(`${membros[i]}`,'')
+            var ret = linha.replace(`${membros[i]}`, '')
             var t = ret.match(/[0-9]+/g)
             danosCausados.push(ret.match(/[0-9]+/g))
           })
         }
 
-        if(danosCausados.length > 0){
+        if (danosCausados.length > 0) {
           danosCausados.map(dano => {
             for (let i = 0; i < numItems; i++) {
               totalDano += Number(dano[i])
-            }    
+            }
           })
         }
       }
@@ -123,7 +124,7 @@ const ClassificacaoManual = (props) => {
 
   return (
     <form name='log' onSubmit={(e) => atualizarLista(e)}>
-      <label>Membros do grupo</label>
+      <label>Insira a lista do grupo separadas por ;</label>
       <br />
       <textarea
         name="membros"
@@ -131,13 +132,9 @@ const ClassificacaoManual = (props) => {
         cols="50"
         onChange={handleInputChange}
         onInput={handleInputChange}
+        disabled={false}
         value={values.membros}
-        readOnly
-        style={{backgroundColor: '#f2f2f2'}}
       />
-      <br />
-      <button onClick={(e) => pegarMembros(idGrupo)}>Pegar membros</button>
-      <br />
       <br />
       <label>Insira a lista de participantes separadas por ;</label>
       <br />
